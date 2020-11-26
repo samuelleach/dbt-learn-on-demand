@@ -5,9 +5,12 @@ sources:
     description: A copy of raw payments from Stripe.
     database: dbt-tutorial
     tables:
-      - name: payments
+      - name: payment
         description: Raw payments data.
         columns:
-          - name: payment_id
+          - name: id
             description: Primary key for payments.
+            tests:
+              - unique
+              - not_null
 
